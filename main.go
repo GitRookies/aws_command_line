@@ -27,9 +27,11 @@ func main() {
 	}
 
 	// On/Off
-	svc := ec2.New(sess)
 	action := os.Args[1]
 	action = strings.ToLower(action)
+	
+	// EC2 checks
+	svc := ec2.New(sess)
 	if action == "on" {
 		input := &ec2.MonitorInstancesInput{
 			InstanceIds: []*string{
