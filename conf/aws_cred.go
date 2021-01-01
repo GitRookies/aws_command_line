@@ -18,7 +18,7 @@ var (
 
 type AWS struct {
 	AwsCred `yaml:"Cred"`
-	Genreal `yaml:"Genreal"`
+	General `yaml:"General"`
 }
 
 type AwsCred struct {
@@ -26,7 +26,7 @@ type AwsCred struct {
 	Secret    string `yaml:"Secret"`
 }
 
-type Genreal struct {
+type General struct {
 	Region     string `yaml:"Region"`
 	InstanceID string `yaml:"InstanceID"`
 }
