@@ -18,7 +18,9 @@ func main() {
 		fmt.Println("Eg. 'aws ec2 start'")
 		fmt.Println(strings.Repeat("#", 40))
 	}
+
 	if choices[0] == "ec2" {
 		ec2.EC2Workflow()
-	}
+  }
+
 }
