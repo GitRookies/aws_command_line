@@ -21,6 +21,8 @@ func main() {
 
 	if choices[0] == "ec2" {
 		ec2.EC2Workflow()
-  }
+
+		// fmt.Println(os.Args[2])
+	}
 
 }
