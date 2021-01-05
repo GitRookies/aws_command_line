@@ -12,15 +12,23 @@ import (
 var (
 	AccessTokenEC2  string
 	AccessSecretEC2 string
+	Region          string
+	InstanceId      string
 )
 
 type AWS struct {
-	EC2 AwsCred `yaml:"Cred"`
+	AwsCred `yaml:"Cred"`
+	General `yaml:"General"`
 }
 
 type AwsCred struct {
 	AccessKey string `yaml:"AccessKey"`
 	Secret    string `yaml:"Secret"`
+}
+
+type General struct {
+	Region     string `yaml:"Region"`
+	InstanceID string `yaml:"InstanceID"`
 }
 
 func init() {
@@ -40,6 +48,8 @@ func init() {
 		fmt.Println("Can't unmarshal a credentials file!")
 	}
 
-	AccessTokenEC2 = awsCred.EC2.AccessKey
-	AccessSecretEC2 = awsCred.EC2.Secret
+	AccessTokenEC2 = awsCred.AccessKey
+	AccessSecretEC2 = awsCred.Secret
+	Region = awsCred.Region
+	InstanceId = awsCred.InstanceID
 }
